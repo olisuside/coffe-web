@@ -38,17 +38,3 @@ gsap.from(".home__button", { opacity: 0, duration: 1, delay: 2.1, y: 30 });
 gsap.from(".home__img", { opacity: 0, duration: 1, delay: 1.3, y: 30 });
 
 //About
-gsap.registerPlugin(ScrollTrigger);
-// For each images with class "animate-image" on page
-gsap.utils.toArray(".animate-image").forEach((el, index) => {
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: el,
-      start: "top top",
-      toggleActions: "play none none reverse",
-      markers: true,
-    },
-  });
-
-  tl.set(el, { transformOrigin: "center center" }).fromTo(el, { opacity: 0, scale: 0.8, y: "+=100" }, { opacity: 1, scale: 1, y: 0, duration: 1, immediateRender: false });
-});
